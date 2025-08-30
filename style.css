@@ -12,7 +12,7 @@ header {
 
 header p{
   font-size: 0.9em;
-  color: #e0e0e0;  
+  color: #000000;  
 }
 
 .container {
@@ -50,7 +50,7 @@ header p{
 
 .sidebar a {
   text-decoration: none;
-  color: #0077cc;
+  color: #ea32ffed;
 }
 
 .sidebar a:hover {
@@ -61,6 +61,7 @@ header p{
   width: 80%;
   padding: 15px;
   box-sizing: border-box;
+
 }
 
 iframe {
@@ -80,6 +81,6 @@ iframe {
 
 .custom-link:hover,
 .custom-link:active {
-    color: #06559e; /* Same color for hover and active states */
+    color: #6ef7f5; /* Same color for hover and active states */
     text-decoration: none; /* Ensure no underline on hover */
 }
