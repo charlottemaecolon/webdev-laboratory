@@ -96,3 +96,8 @@ footer {
   margin-top: 40px;
   border-top: 2px solid #b84a62;
 }
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
