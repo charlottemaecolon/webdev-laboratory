@@ -10,6 +10,7 @@ header {
   text-align: center;
   
 }
+
 header h2 {
   font-family: "Lucida Handwriting", cursive;
   font-size: 2rem;
@@ -79,17 +80,3 @@ iframe {
   border: none;
 }
 
-.custom-link {
-    text-decoration: none; /* Removes underline */
-    color: #ffffff; /* Set your desired color (e.g., blue) */
-}
-
-.custom-link:visited {
-    color: #ffffff; /* Same color for visited links */
-}
-
-.custom-link:hover,
-.custom-link:active {
-    color: #5bfdfa; /* Same color for hover and active states */
-    text-decoration: none; /* Ensure no underline on hover */
-}
