@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nezuko’s Power Gallery</title>
+
+    <style>
+        body {
+            background-color: #ffe6f0; /* Soft pink background */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b3005c;
+            text-shadow: 1px 1px #ffccd5;
+        }
+
+        p {
+            text-align: center;
+            color: #7a004c;
+            font-size: 1.1em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .photo {
+            background-color: #ffb6c1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 250px; /* Fixed uniform height */
+            object-fit: contain; /* Shows full image */
+            background-color: #ffe6f0; /* Soft background for empty spaces */
+            display: block;
+        }
+
+        .caption {
+            text-align: center;
+            padding: 10px;
+            color: #b3005c;
+            font-weight: bold;
+            background-color: #ffe6f0;
+        }
+
+        @media (min-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Nezuko Kamado’s Power Gallery 🌸</h1>
+    <p>Discover the strength, grace, and fiery spirit of Nezuko as she protects those she loves.</p>
+
+    <div class="gallery">
+        <div class="photo">
+            <img src="https://i.pinimg.com/474x/86/37/7d/86377deb036db3d7d653bf3499f5ffc3.jpg" alt="Nezuko Demon Form">
+            <div class="caption">🔥 Demon Form</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://ih1.redbubble.net/image.5749954801.1522/pp,504x498-pad,600x600,f8f8f8.jpg" alt="Blood Demon Art">
+            <div class="caption">💉 Blood Demon Art</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://i.pinimg.com/736x/f1/29/7e/f1297e4ef04c4b94b93bb6cfe00160f1.jpg" alt="Protective Power">
+            <div class="caption">🌸 Protective Strength</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://i.pinimg.com/736x/57/ae/62/57ae624f361120cb9cfa4e977e82e333.jpg" alt="Nezuko Speed">
+            <div class="caption">⚡ Lightning Speed</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://i.pinimg.com/736x/c3/2e/68/c32e6830454b0146208db28ea2533f2b.jpg" alt="Nezuko Healing">
+            <div class="caption">💫 Healing Abilities</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://i.pinimg.com/736x/c8/20/00/c8200075a02d5e649b515204c4ae43a6.jpg" alt="Nezuko’s Bond">
+            <div class="caption">💖 Bond with Tanjiro</div>
+        </div>
+    </div>
+
+</body>
+</html>
