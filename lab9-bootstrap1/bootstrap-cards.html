@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nezuko Kamado Power Gallery</title>
+
+  <!-- Bootstrap CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #ffe6f0; /* soft pink background */
+      font-family: 'Poppins', sans-serif;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #b3005c;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px #ffccd5;
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    /* ✅ This makes the images FIT properly inside cards */
+    .card-img-top {
+      width: 100%;
+      height: 280px;
+      object-fit: contain;     /* shows the whole image */
+      background-color: #fff0f5;  /* soft pink filler behind the image */
+      padding: 10px;
+    }
+
+    .card-body {
+      background-color: #fff0f5;
+    }
+
+    .btn {
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Nezuko Kamado’s Power Cards 🌸</h1>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <img src="https://i.pinimg.com/1200x/90/90/82/909082c7152c4aa557c4133ad63f7cf5.jpg" class="card-img-top" alt="Nezuko Kamado">
+          <div class="card-body text-center">
+            <h5 class="card-title">Nezuko Kamado</h5>
+            <p class="card-text">A kind-hearted demon girl who protects her brother Tanjiro and shows immense strength.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <img src="https://i.pinimg.com/1200x/c9/f4/6a/c9f46a20a106850afd8575195508f635.jpg" class="card-img-top" alt="Blood Demon Art">
+          <div class="card-body text-center">
+            <h5 class="card-title">Blood Demon Art</h5>
+            <p class="card-text">Nezuko’s fiery Blood Demon Art grants her pink flames that burn demons to ashes.</p>
+            <a href="#" class="btn btn-success">View Power</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <img src="https://i.pinimg.com/736x/73/2f/83/732f83971cfbd8b57d3c9fe55289425c.jpg" class="card-img-top" alt="Bond with Tanjiro">
+          <div class="card-body text-center">
+            <h5 class="card-title">Bond with Tanjiro</h5>
+            <p class="card-text">Despite her demon form, her love and loyalty for Tanjiro remain strong and pure.</p>
+            <a href="#" class="btn btn-danger">See Story</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
+</html>

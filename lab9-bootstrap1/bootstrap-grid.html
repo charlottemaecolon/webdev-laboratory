@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Grid Basics</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* 🌸 Soft Pink Theme */
+    body {
+      background-color: #fff5f7;
+      color: #4a4a4a;
+      font-family: "Poppins", sans-serif;
+    }
+
+    h1, h2 {
+      color: #d66d94;
+      font-weight: 600;
+    }
+
+    hr {
+      border-top: 2px solid #f8bbd0;
+    }
+
+    /* Box styling */
+    .grid-box {
+      background-color: #fbcfe8; /* light pink */
+      color: #4a4a4a;
+      padding: 20px;
+      border: 1px solid #f8bbd0;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 500;
+      transition: transform 0.2s ease;
+    }
+
+    .grid-box:hover {
+      transform: translateY(-3px);
+      background-color: #f9a8d4;
+    }
+
+    .row-gap {
+      margin-top: 40px;
+    }
+
+    /* Section labels */
+    p.lead {
+      color: #666;
+    }
+
+    ul li {
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Bootstrap Grid System</h1>
+    <p class="lead text-center">Resize your browser window to see how the columns adapt beautifully.</p>
+    <hr>
+
+    <!-- Test 1 & 2 -->
+    <h2 class="h4 mt-4">Test Case 1 & 2: Equal-Width Columns</h2>
+    <div class="row">
+      <div class="col grid-box">Box 1: col (Auto-width)</div>
+      <div class="col grid-box">Box 2: col (Auto-width)</div>
+      <div class="col grid-box">Box 3: col (Auto-width)</div>
+    </div>
+
+    <!-- Test 3 -->
+    <h2 class="h4 row-gap">Test Case 3: Gutter Comparison</h2>
+
+    <p>Row with <b>g-0</b> (No gutter):</p>
+    <div class="row g-0">
+      <div class="col-6"><div class="grid-box">col-6, g-0</div></div>
+      <div class="col-6"><div class="grid-box">col-6, g-0</div></div>
+    </div>
+
+    <p class="mt-4">Row with <b>g-3</b> (Medium gutter):</p>
+    <div class="row g-3">
+      <div class="col-6"><div class="grid-box">col-6, g-3</div></div>
+      <div class="col-6"><div class="grid-box">col-6, g-3</div></div>
+    </div>
+
+    <!-- Test 4 -->
+    <h2 class="h4 row-gap">Test Case 4: Responsive Column Count</h2>
+    <p>This row shows:</p>
+    <ul>
+      <li>1 column per row on <b>Extra Small/Mobile</b></li>
+      <li>2 columns per row on <b>Small</b> screens and up</li>
+      <li>4 columns per row on <b>Large</b> screens and up</li>
+    </ul>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+      <div class="col"><div class="grid-box">Box A</div></div>
+      <div class="col"><div class="grid-box">Box B</div></div>
+      <div class="col"><div class="grid-box">Box C</div></div>
+      <div class="col"><div class="grid-box">Box D</div></div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
