@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ffd1dc, #ffe6ec);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+
+    .calculator {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(214, 51, 132, 0.2);
+      text-align: center;
+    }
+
+    input {
+      width: 150px;
+      padding: 8px;
+      margin: 10px;
+      border: 2px solid #f48fb1;
+      border-radius: 6px;
+      outline: none;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    input:focus {
+      border-color: #ec407a;
+      box-shadow: 0 0 6px rgba(236, 64, 122, 0.5);
+    }
+
+    button {
+      background-color: #ec407a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d81b60;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h2>Simple Calculator</h2>
+
+    <input type="number" id="num1" placeholder="First number">
+    <input type="number" id="num2" placeholder="Second number">
+    <br>
+
+    <button onclick="calculate('add')">Add</button>
+    <button onclick="calculate('subtract')">Subtract</button>
+    <button onclick="calculate('multiply')">Multiply</button>
+    <button onclick="calculate('divide')">Divide</button>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function calculate(operation) {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let resultText = "";
+
+      if (isNaN(n1) || isNaN(n2)) {
+        resultText = "Please enter both numbers.";
+      } else {
+        switch (operation) {
+          case "add":
+            resultText = "The sum is: " + (n1 + n2);
+            break;
+          case "subtract":
+            resultText = "The difference is: " + (n1 - n2);
+            break;
+          case "multiply":
+            resultText = "The product is: " + (n1 * n2);
+            break;
+          case "divide":
+            if (n2 === 0) {
+              resultText = "Cannot divide by zero.";
+            } else {
+              resultText = "The quotient is: " + (n1 / n2);
+            }
+            break;
+        }
+      }
+
+      document.getElementById("result").innerText = resultText;
+    }
+  </script>
+
+</body>
+</html>
