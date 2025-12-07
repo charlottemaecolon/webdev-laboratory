@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit List Generator</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to right, #ffe6ef, #ffd7e5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff0f6; 
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(255, 150, 180, 0.25);
+      text-align: center;
+      width: 340px;
+      border: 2px solid #f588b4;
+    }
+
+    h1 {
+      color: #d16b8c; 
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #ff9fbb;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+      margin: 5px;
+      box-shadow: 0 3px 8px rgba(255, 150, 180, 0.3);
+    }
+
+    button:hover {
+      background: #f287a5;
+      transform: scale(1.05);
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      border: 1px solid #fa91b5;
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 10px;
+      text-align: center;
+      background: #eb8eb0;
+      color: #fff0f6;
+      font-weight: 500;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    li {
+      background: #d16b8c; /* Dark Pink Background */
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 8px;
+      color: #fff0f6; /* Light font for readability */
+      font-weight: 500;
+      transition: transform 0.2s, background 0.3s;
+      border: 1px solid #bf4f85;
+      text-align: center;
+      opacity: 0; /* For fade-in */
+      transform: translateY(-10px); /* Start slightly above */
+    }
+
+    li:hover {
+      transform: scale(1.05);
+      background: #c45f96; /* Slightly lighter on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Fruit List Generator</h1>
+
+    <button onclick="generateList()">Generate Fruit List</button>
+    <br><br>
+
+    <input type="text" id="newFruit" placeholder="Enter a new fruit">
+    <button onclick="addFruit()">Add Fruit</button>
+
+    <ul id="fruit-list"></ul>
+  </div>
+
+  <script>
+    
+    const fruits = ["Apple", "Banana", "Mango", "Strawberry", "Grapes"];
+    const fruitList = document.getElementById("fruit-list");
+
+    
+    function createListItem(fruit) {
+      const li = document.createElement("li");
+      li.textContent = fruit;
+      fruitList.appendChild(li);
+
+     
+      requestAnimationFrame(() => {
+        li.style.opacity = 1;
+        li.style.transform = "translateY(0)";
+      });
+    }
+
+    
+    function generateList() {
+      fruitList.innerHTML = ""; 
+      fruits.forEach(fruit => {
+        createListItem(fruit);
+      });
+    }
+
+    
+    function addFruit() {
+      const input = document.getElementById("newFruit");
+      const newFruit = input.value.trim();
+
+      if (newFruit) {
+        fruits.push(newFruit);
+        createListItem(newFruit);
+        input.value = "";
+      } else {
+        alert("Please enter a fruit name! 🍓");
+      }
+    }
+
+    // Generate the list on page load
+    generateList();
+  </script>
+</body>
+</html>

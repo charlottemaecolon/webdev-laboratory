@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Array Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: linear-gradient(to right, #ffe6f0, #ffd7e5);
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff0f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #d81b60;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #c2185b;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #d81b60; 
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            width: 100%;
+            background: #f8bbd0;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #f06292; 
+        }
+
+        #list {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffe6f0;
+            border-left: 4px solid #d81b60;
+            border-radius: 6px;
+        }
+
+        #list h3 {
+            margin-top: 0;
+            color: #c2185b; 
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            input, textarea, button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Contact Form</h2>
+
+        <form onsubmit="saveContact(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="3" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="list"></div>
+    </div>
+
+    <script>
+        let contacts = []; 
+
+        function saveContact(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let message = document.getElementById("message").value;
+
+            
+            contacts.push({
+                name: name,
+                message: message
+            });
+
+            displayList();
+
+            
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+        }
+
+        function displayList() {
+            let listDiv = document.getElementById("list");
+            listDiv.innerHTML = "<h3>Contact List:</h3>";
+
+            contacts.forEach(function(contact, index) {
+                listDiv.innerHTML += 
+                    "<p><strong>" + (index + 1) + ". " + contact.name +
+                    ":</strong> " + contact.message + "</p>";
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffe6f0, #ffd7e5);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff0f5; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+
+        .container:hover {
+            background-color: #ffe6f5;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d81b60;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #c2185b;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #d81b60;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            width: 100%;
+            background: #f8bbd0;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #f06292;
+        }
+
+        #reservationList {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffe6f0;
+            border-left: 4px solid #d81b60;
+            border-radius: 6px;
+        }
+
+        #reservationList h3 {
+            margin-top: 0;
+            color: #c2185b; 
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            input, select, button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Reservation Form</h2>
+
+        <form onsubmit="submitReservation(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" required>
+
+            <label for="guests">Guests:</label>
+            <input type="number" id="guests" min="1" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="reservationList"></div>
+    </div>
+
+    <script>
+        let reservations = [];
+
+        function submitReservation(event) {
+            event.preventDefault();
+
+            // Get field values
+            let name = document.getElementById("name").value;
+            let date = document.getElementById("date").value;
+            let time = document.getElementById("time").value;
+            let guests = document.getElementById("guests").value;
+
+            // Simple validation
+            if (!name || !date || !time || !guests) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Store reservation
+            reservations.push({ name, date, time, guests });
+
+            displayReservations();
+
+            // Clear fields
+            document.getElementById("name").value = "";
+            document.getElementById("date").value = "";
+            document.getElementById("time").value = "";
+            document.getElementById("guests").value = "";
+        }
+
+        function displayReservations() {
+            let listDiv = document.getElementById("reservationList");
+            listDiv.innerHTML = "<h3>Reservations:</h3>";
+
+            reservations.forEach(function(reservation, index) {
+                listDiv.innerHTML +=
+                    "<p><strong>" + (index + 1) + ". " + reservation.name + 
+                    "</strong> | Date: " + reservation.date + 
+                    " | Time: " + reservation.time + 
+                    " | Guests: " + reservation.guests + "</p>";
+            });
+        }
+    </script>
+
+</body>
+</html>

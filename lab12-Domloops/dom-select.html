@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Selection and Text Change</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe6ef, #ffd7e5); 
+      color: #5e4a52;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff2f8;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0px 4px 20px rgba(255, 170, 190, 0.35); 
+      width: 90%;
+      max-width: 400px;
+      border: 2px solid #ffd1df;
+    }
+
+    h1 {
+      color: #d16b8c;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    p {
+      color: #8a5a6a;
+    }
+
+    button {
+      background-color: #ff9fbb; 
+      border: none;
+      color: white;
+      font-size: 1em;
+      padding: 12px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      box-shadow: 0px 3px 10px rgba(255, 150, 180, 0.3);
+    }
+
+    button:hover {
+      background-color: #f287a5;
+      transform: scale(1.07);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #b97c94;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="page-title">Welcome to My Page</h1>
+    <p>Click the button to change the title below 👇</p>
+    <button onclick="changeTitle()">Change Title</button>
+
+    <footer>© 2025 Web Dev Lab – DOM Activity</footer>
+  </div>
+
+  <script src="dom.js"></script>
+</body>
+</html>

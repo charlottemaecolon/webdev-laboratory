@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Background Changer</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #ffe6ef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: background-color 0.8s ease;
+      margin: 0;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 40px 50px;
+      border-radius: 25px;
+      box-shadow: 0 5px 15px rgba(255, 150, 180, 0.25); 
+      text-align: center;
+      width: 350px;
+      border: 2px solid #ffccd9;
+    }
+
+    h1 {
+      color: #d45b7a;
+      margin-bottom: 25px;
+    }
+
+    select {
+      padding: 10px 15px;
+      border: 1px solid #f4b6c2;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      cursor: pointer;
+      background-color: #ffeef3;
+      margin-bottom: 20px;
+      color: #a04b63;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff9bb3;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #f27895;
+      transform: scale(1.05);
+    }
+
+    p {
+      margin-top: 15px;
+      color: #a04b63;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 13px;
+      color: #c98a9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Dynamic Background Changer</h1>
+
+    <select id="colorSelect">
+      <option value="">Select a color</option>
+      <option value="#f8c4c4">Pink</option>
+      <option value="#c4ddf8">Blue</option>
+      <option value="#fff7b2">Yellow</option>
+      <option value="#e6d3f8">Purple</option>
+      <option value="#000000">Black</option>
+      <option value="#ffffff">White</option>
+    </select>
+    <br>
+
+    <button onclick="changeBackground()">Change Background</button>
+    <p id="message"></p>
+  </div>
+
+  <footer>
+    &copy; 2025 Web Development Lab | Activity 5
+  </footer>
+
+  <script>
+    function changeBackground() {
+      const selectedColor = document.getElementById("colorSelect").value;
+      const message = document.getElementById("message");
+
+      if (selectedColor) {
+        document.body.style.backgroundColor = selectedColor;
+        message.innerText = "Background color changed successfully!";
+      } else {
+        message.innerText = "Please select a color first.";
+      }
+    }
+  </script>
+
+</body>
+</html>

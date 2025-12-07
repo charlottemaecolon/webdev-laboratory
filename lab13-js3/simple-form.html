@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffe6f0, #ffd7e5); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff0f5; 
+            width: 90%;
+            max-width: 380px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #c2185b; 
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #d81b60; 
+            border-radius: 8px;
+            box-sizing: border-box; 
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #f8bbd0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #f06292; 
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffe6f0; 
+            border-left: 4px solid #d81b60; 
+            display: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 style="color:#d81b60; text-align:center;">Simple Interactive Form</h2>
+
+        <form id="myForm" onsubmit="handleSubmit(event)">
+            <label>Name:</label>
+            <input type="text" id="name" required>
+
+            <label>Email:</label>
+            <input type="email" id="email" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            var outputDiv = document.getElementById("output");
+            outputDiv.style.display = "block";
+
+            outputDiv.innerHTML = 
+                "<h3 style='color:#c2185b;'>Submitted Information:</h3>" +
+                "<p><strong>Name:</strong> " + name + "</p>" +
+                "<p><strong>Email:</strong> " + email + "</p>";
+        }
+    </script>
+
+</body>
+</html>
